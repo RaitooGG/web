@@ -388,6 +388,7 @@ map.on("load", () => {
     location = [lon, ganiza];
   });
   Navigation.setOrigin(location);
+  console.log(location);
   Geolocate.trigger();
 });
 
