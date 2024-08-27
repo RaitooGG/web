@@ -374,14 +374,13 @@ map.addControl(Geolocate);
 /*UBICACIÓN ACTUAL DEL USUARIO, YA LO HACE DE FORMA AUTOMÁTICA, CUANDO LA PERSONA ENTRA O  RECARGA EL SISTEMA, Y 
   ESTE CONCEDE PERMISO DE UBICACIÓN DEL NAVEGADOR SE TE DETECTA LA UBICACIÓN INMEDIATAMENTE, Y ESTA 
   SE COLOCA EN EL PUNTA A DEL CUADRO DE NAVEGACIÓN DIRECTAMENTE*/
-map.on("style.load", () => {
-  Geolocate.trigger();
-  Geolocate.on("geolocate", function (e) {
-    var lon = e.coords.longitude;
-    var ganiza = e.coords.latitude;
-    var position = [lon, ganiza];
-    Navigation.setOrigin(position);
-  });
+
+Geolocate.trigger();
+Geolocate.on("geolocate", function (e) {
+  var lon = e.coords.longitude;
+  var ganiza = e.coords.latitude;
+  var position = [lon, ganiza];
+  Navigation.setOrigin(position);
 });
 
 //AGREGAR BARRA DE ZOOM
