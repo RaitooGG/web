@@ -369,20 +369,25 @@ const Geolocate = new mapboxgl.GeolocateControl({
   showUserHeading: true,
   fitBoundsOptions: { maxZoom: 12.3 },
 });
+const updateCamera = Geolocate._updateCamera;
+
+// replace updateCamera method with noop operation
+Geolocate._updateCamera = function () {};
+
 map.addControl(Geolocate);
 
 /*UBICACIÓN ACTUAL DEL USUARIO, YA LO HACE DE FORMA AUTOMÁTICA, CUANDO LA PERSONA ENTRA O  RECARGA EL SISTEMA, Y 
   ESTE CONCEDE PERMISO DE UBICACIÓN DEL NAVEGADOR SE TE DETECTA LA UBICACIÓN INMEDIATAMENTE, Y ESTA 
   SE COLOCA EN EL PUNTA A DEL CUADRO DE NAVEGACIÓN DIRECTAMENTE*/
 map.on("load", () => {
-  Geolocate.trigger({ state: 'passive' });
-  Geolocate.on("geolocate", function (e) {
+  Geolocate.once("geolocate", function (e) {
     var lon = e.coords.longitude;
     var ganiza = e.coords.latitude;
     var position = [lon, ganiza];
     Navigation.setOrigin(position);
-    console.log(Geolocate.trigger({ state: 'passive' }));
+    Geolocate._updateCamera = updateCamera;
   });
+  Geolocate.trigger();
 });
 
 
