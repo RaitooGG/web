@@ -381,13 +381,16 @@ map.addControl(Geolocate);
   SE COLOCA EN EL PUNTA A DEL CUADRO DE NAVEGACIÓN DIRECTAMENTE*/
 map.on("load", () => {
   Geolocate.once("geolocate", function (e) {
+    Geolocate._updateCamera = updateCamera;
+  });
+  Geolocate.on("geolocate", function (e) {
     var lon = e.coords.longitude;
     var ganiza = e.coords.latitude;
     var position = [lon, ganiza];
     Navigation.setOrigin(position);
-    Geolocate._updateCamera = updateCamera;
   });
   Geolocate.trigger();
+  console.log(Geolocate.trigger());
 });
 
 
