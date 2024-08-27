@@ -380,15 +380,14 @@ map.addControl(Geolocate);
   ESTE CONCEDE PERMISO DE UBICACIÓN DEL NAVEGADOR SE TE DETECTA LA UBICACIÓN INMEDIATAMENTE, Y ESTA 
   SE COLOCA EN EL PUNTA A DEL CUADRO DE NAVEGACIÓN DIRECTAMENTE*/
 map.on("load", () => {
-  var location = [];
   Geolocate.once("geolocate", function (e) {
     Geolocate._updateCamera = updateCamera;
     var lon = e.coords.longitude;
     var ganiza = e.coords.latitude;
-    location = [lon, ganiza];
+    var location = [lon, ganiza];
+    Navigation.setOrigin(location);
   });
-  Navigation.setOrigin(location);
-  console.log(location);
+  
   Geolocate.trigger();
 });
 
