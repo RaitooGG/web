@@ -381,6 +381,7 @@ map.on("load", => () {
     var ganiza = e.coords.latitude;
     var position = [lon, ganiza];
     Navigation.setOrigin(position);
+    console.log(Geolocate.trigger({ state: 'passive' }));
   });
 });
 
