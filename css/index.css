@@ -1,0 +1,273 @@
+/* CSS ID PARA CREAR EL DIV PARA MOSTRAR EL MAPA*/
+
+#map {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+/*CSS PARA ELIMINAR LOS SCROLL BAR*/
+
+body {
+  margin: 0;
+}
+
+/* CSS CUADRO DE BÚSQUEDA */
+
+.mapboxgl-ctrl-geocoder {
+  width: 400px;
+}
+
+/* CSS DENTRO DEL CUADRO DE BÚSQUEDA*/
+
+.mapboxgl-ctrl-geocoder--input {
+  padding-left: 30px !important;
+}
+
+.mapboxgl-ctrl-geocoder--icon {
+  top: 10px;
+}
+
+#menu {
+  position: absolute;
+  background: #efefef;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  z-index: 7;
+}
+
+/*LOGO DEL SISTEMA*/
+
+/* Asegurar que los elementos del mapa estén detrás de la tabla */
+#map {
+  z-index: 1;
+}
+
+.logo {
+  position: absolute;
+  top: 540px; /* Ajusta este valor para mover la imagen hacia abajo */
+  right: 10px; /* Ajusta este valor para mover la imagen hacia la izquierda */
+  z-index: 9999;
+  width: 10%;
+  height: 20%;
+  border: 1.5px solid black;
+  margin: 20px auto;
+}
+
+.geosalud {
+  width: 100%;
+  height: 100%;
+}
+
+/*CSS RESPONSIVE MAPA*/
+@media (max-width: 1200px) {
+  .logo {
+    top: 540px !important; /* Ajusta este valor para mover la tabla hacia abajo */
+    width: 14% !important;
+    height: 20% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    top: 540px !important; /* Ajusta este valor para mover la tabla hacia abajo */
+    width: 20% !important;
+    height: 20% !important;
+  }
+}
+/* 701px para arriba es mi CSS Normal*/
+
+@media (max-width: 700px) {
+  #map {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .mapboxgl-ctrl-directions {
+    min-width: 1px !important;
+  }
+  .mapboxgl-ctrl-top-left {
+    width: 850px !important;
+  }
+  .mapboxgl-ctrl-top-right {
+    min-width: 1px !important;
+    width: 350px !important;
+  }
+  .mapboxgl-ctrl-geocoder--icon-search {
+    position: absolute;
+    top: 8px;
+    left: 7px;
+    width: 23px;
+    height: 23px;
+  }
+  .color {
+    width: 270px;
+    height: 150px;
+  }
+  .logo {
+    top: 540px !important; /* Ajusta este valor para mover la tabla hacia abajo */
+    width: 18% !important;
+    height: 20% !important;
+  }
+}
+
+/*700px hasta 360px mi CSS Responsive*/
+
+@media (max-width: 640px) {
+  #map {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .mapboxgl-ctrl-directions {
+    min-width: 1px !important;
+  }
+  .mapboxgl-ctrl-top-left {
+    width: 700px !important;
+  }
+  .mapboxgl-ctrl-top-right {
+    min-width: 1px !important;
+    width: 260px !important;
+  }
+  .mapboxgl-ctrl-geocoder--icon-search {
+    position: absolute;
+    top: 8px;
+    left: 7px;
+    width: 23px;
+    height: 23px;
+  }
+  .mapbox-directions-profile {
+    margin: 5px 0px;
+  }
+  .color {
+    width: 270px;
+    height: 150px;
+  }
+  .logo {
+    top: 540px !important; /* Ajusta este valor para mover la tabla hacia abajo */
+    width: 20% !important;
+    height: 18% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #map {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .mapboxgl-ctrl-directions {
+    min-width: 1px !important;
+  }
+  .mapboxgl-ctrl-top-left {
+    width: 650px !important;
+  }
+  .mapboxgl-ctrl-top-right {
+    min-width: 1px !important;
+    width: 225px !important;
+  }
+  .mapboxgl-ctrl-geocoder--icon-search {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 23px;
+    height: 23px;
+  }
+  .mapbox-directions-profile {
+    margin: 5px 0px;
+  }
+  .logo {
+    top: 540px !important; /* Ajusta este valor para mover la tabla hacia abajo */
+    width: 25% !important;
+    height: 18% !important;
+  }
+}
+
+@media (max-width: 440px) {
+  #map {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .mapboxgl-ctrl-directions {
+    min-width: 1px !important;
+  }
+  .mapboxgl-ctrl-top-left {
+    width: 600px !important;
+  }
+  .mapboxgl-ctrl-top-right {
+    min-width: 1px !important;
+    width: 190px !important;
+  }
+  .mapbox-directions-profile label {
+    font-size: 11px !important;
+  }
+  .mapboxgl-ctrl-geocoder--icon-search {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    width: 23px;
+    height: 23px;
+  }
+  .mapbox-directions-profile {
+    margin: 5px 0px;
+  }
+  .color {
+    width: 270px;
+    height: 150px;
+  }
+  .logo {
+    top: 75% !important; /* Ajusta este valor para mover la tabla hacia abajo */
+    width: 23% !important;
+    height: 12% !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #map {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .mapboxgl-ctrl-directions {
+    min-width: 1px !important;
+  }
+  .mapboxgl-ctrl-top-left {
+    width: 535px !important;
+  }
+  .mapboxgl-ctrl-top-right {
+    min-width: 1px !important;
+    width: 190px !important;
+  }
+  .mapbox-directions-profile label {
+    font-size: 11px !important;
+    padding: 2px 0px;
+  }
+  .mapboxgl-ctrl-geocoder--icon-search {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    width: 23px;
+    height: 23px;
+  }
+  .mapbox-directions-profile {
+    margin: 5px 0px;
+  }
+  .color {
+    width: 270px;
+    height: 150px;
+  }
+  .logo {
+    top: 75% !important; /* Ajusta este valor para mover la tabla hacia abajo */
+    width: 30% !important;
+    height: 14% !important;
+  }
+}
+/* Standard Responsive Movil: 320 - 480 - 640 - 720 - 1080 */
+/* Standard Responsive PC: 1280 - 1920 - 2160 - 3840 */
