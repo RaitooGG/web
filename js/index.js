@@ -383,12 +383,10 @@ map.on("load", () => {
   Geolocate.once("geolocate", function (e) {
     Geolocate._updateCamera = updateCamera;
   });
-  Geolocate.on("geolocate", function (e) {
-    var lon = e.coords.longitude;
-    var ganiza = e.coords.latitude;
-    var position = [lon, ganiza];
-    Navigation.setOrigin(position);
-  });
+  var lon = e.coords.longitude;
+  var ganiza = e.coords.latitude;
+  var position = [lon, ganiza];
+  Navigation.setOrigin(position);
   Geolocate.trigger();
   console.log(Geolocate.trigger());
 });
