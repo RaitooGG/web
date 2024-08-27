@@ -375,7 +375,7 @@ map.addControl(Geolocate);
   ESTE CONCEDE PERMISO DE UBICACIÓN DEL NAVEGADOR SE TE DETECTA LA UBICACIÓN INMEDIATAMENTE, Y ESTA 
   SE COLOCA EN EL PUNTA A DEL CUADRO DE NAVEGACIÓN DIRECTAMENTE*/
 
-Geolocate.trigger();
+Geolocate.trigger({ state: 'passive' });
 Geolocate.on("geolocate", function (e) {
   var lon = e.coords.longitude;
   var ganiza = e.coords.latitude;
@@ -1042,7 +1042,7 @@ map.on("style.load", () => {
       coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
     }
 
-    // Populate the popup and set its coordinates
+    // Populate the popup and set itsfge coordinates
     // based on the feature found.
     popup.setLngLat(coordinates).setHTML(description).addTo(map);
   });
