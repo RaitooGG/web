@@ -385,11 +385,12 @@ map.on("load", () => {
     var lon = e.coords.longitude;
     var ganiza = e.coords.latitude;
     var position = [lon, ganiza];
+    console.log(position);
     return position;
   });
   Navigation.setOrigin(location);
   Geolocate.trigger();
-  console.log(Geolocate.trigger());
+  console.log(location);
 });
 
 
